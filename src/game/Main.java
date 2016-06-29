@@ -72,6 +72,12 @@ class Sender extends Thread {
 				String message = in.readLine();
 				if(message.equals("1")){
 					message = "{\"request_type\": \"JOIN_SERVER\", character_id:\"1\"}";
+				}else if(message.equals("2")){
+					message = "{\"request_type\": \"CREATE_CHARACTER\", character_class:\"WARRIOR\"}";
+				}else if(message.equals("3")){
+					message = "{\"request_type\": \"CHARACTER_ACTION\", character_id:\"1\"}";
+				}else if(message.equals("4")){
+					message = "{\"request_type\": \"GET_STATUS\", character_id:\"1\"}";
 				}
 				mOut.println(message);
 				mOut.flush();
